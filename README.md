@@ -22,6 +22,8 @@ Nothing else is needed: no key, no checkout, no local server, no voice model.
 
 If Claude says elucify needs authentication, or the sign-in expired, run `/mcp` and Authenticate again.
 
+To get a newer version of the plugin: run `/plugin marketplace update elucify`, then `/plugin update elucify@elucify`.
+
 ## Use
 
 ```
