@@ -8,8 +8,8 @@ Create a narrated visual explanation of $ARGUMENTS with the elucify MCP tools. W
 1. Call `get_authoring_instructions` and follow it. It returns the core rules and an index of references. If the narration will not be in English, read the `languages` reference now, before step 2.
 2. Call `create_explanation` and show the returned viewer link to the user immediately, before writing any scene. Keep working in the same turn while they watch.
 3. Before a scene uses an element named in the index (a graph, table, geometry and so on), read its reference with `get_element_reference`; one call takes up to 6 names. Do not write from memory. Use `get_scene_schema` for exact fields (`kinds` narrows it to the object kinds you use).
-4. Append one complete scene at a time with `append_scene`, starting with a substantial first scene (2-3 beats, about 30 seconds of narration) so it is still playing when the next scene arrives. If a scene is rejected, fix that same scene and resend it; if an append is interrupted, resend the identical scene.
-5. Call `finalize_explanation` when every scene is accepted. Give the viewer link and mention any captions-only warning.
+4. Append one complete scene at a time with `append_scene`, starting with a substantial first scene (2-3 beats, about 30 seconds of narration) so it is still playing when the next scene arrives. If a scene is rejected, fix that same scene and resend it; if an append is interrupted, resend the identical scene. `append_scene` returns as soon as the scene is accepted, while its beats may still be voiced, so send the next scene straight away; its result says how many beats are ready.
+5. Call `finalize_explanation` when every scene is accepted. If it says beats are still being voiced, call it again to wait. Give the viewer link and mention any captions-only warning.
 
 The first link is secret, not private: anyone who has it can watch, and it can't be withdrawn, so tell the user to keep it to themselves. If they want others to watch, call `share_explanation` and give them that link instead; `revoke_share` withdraws it.
 

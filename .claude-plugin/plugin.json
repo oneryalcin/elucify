@@ -1,6 +1,6 @@
 {
   "name": "elucify",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Turn any question into a narrated, animated explanation you watch in your browser while Claude writes it.",
   "author": {"name": "Oner Yalcin"},
   "homepage": "https://github.com/oneryalcin/elucify",
